@@ -25,7 +25,7 @@ public class Main {
         purchasingManager.addProduct(product2.getName(), product2.getDescription(), product2.getPrice(), category);
 
         // Crear un descuento para el primer producto
-        product1.setDiscount(LocalDate.now(), LocalDate.now().plusDays(30), 10, category);
+        product1.setDiscount(LocalDate.now(), LocalDate.now().plusDays(30), 10);
 
         // Realizar dos compras para el primer cliente
         Customer firstCustomer = purchasingManager.getCustomer("Juan", "Pérez");
@@ -37,26 +37,16 @@ public class Main {
         // Mostrar los datos de las compras del primer cliente
         System.out.println("Compras de " + firstCustomer.getName()+ " " + firstCustomer.getSurname() + " (" + firstCustomer.getEmail() + "):");
         for (Purchase purchase : purchasingManager.getPurchaseList(firstCustomer)) {
-            if (purchase.getDate().isAfter(product1.discount.getFrom()) && purchase.getDate().isBefore(product1.discount.getTo()) && purchase.getProduct().equals(product1)) {
-                    System.out.println("ID de compra: " + purchase.getId());
-                    System.out.println("Fecha de compra: " + purchase.getDate());
-                    System.out.println("Producto: " + purchase.getProduct().getName());
-                    System.out.println("Categoría: " + purchase.getProduct().getCategory());
-                    System.out.println("Descripción: " + purchase.getProduct().getDescription());
-                    System.out.println("Descuento: " + purchase.getProduct().getDiscount());
-                    System.out.println("Precio: " + purchase.price());
-                    System.out.println("Dirección de entrega: " + purchase.getDeliveryAddress().getAddress() + " " + purchase.getDeliveryAddress().getNumber());
-                    System.out.println("------------------------------------------------");
-            } else {
-                System.out.println("ID de compra: " + purchase.getId());
-                System.out.println("Fecha de compra: " + purchase.getDate());
-                System.out.println("Producto: " + purchase.getProduct().getName());
-                System.out.println("Categoría: " + purchase.getProduct().getCategory());
-                System.out.println("Descripción: " + purchase.getProduct().getDescription());
-                System.out.println("Precio: " + purchase.price());
-                System.out.println("Dirección de entrega: " + purchase.getDeliveryAddress().getAddress() + " " + purchase.getDeliveryAddress().getNumber());
-                System.out.println("------------------------------------------------");
-            }
+            System.out.println("ID de compra: " + purchase.getId());
+            System.out.println("Fecha de compra: " + purchase.getDate());
+            System.out.println("Producto: " + purchase.getProduct().getName());
+            System.out.println("Categoría: " + purchase.getProduct().getCategory());
+            System.out.println("Descripción: " + purchase.getProduct().getDescription());
+            System.out.println("Descuento: " + purchase.getProduct().getDiscount()+"%");
+            System.out.println("Precio: " + purchase.price()+"€");
+            System.out.println("Precio final: " + (purchase.price() - purchase.price() * (purchase.getProduct().getDiscount()/100))+"€");
+            System.out.println("Dirección de entrega: " + purchase.getDeliveryAddress().getAddress() + " " + purchase.getDeliveryAddress().getNumber());
+            System.out.println("------------------------------------------------");
         }
     }
 }

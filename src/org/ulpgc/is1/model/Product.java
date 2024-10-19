@@ -7,17 +7,18 @@ public class Product {
     private final int id;
     private String name;
     private String description;
-    private int price;
+    private float price;
     private ProductCategory category;
     public Discount discount;
     Purchase purchase;
 
-    public Product(String name, String description, int price, ProductCategory category) {
+    public Product(String name, String description, float price, ProductCategory category) {
         this.id =idCounter++ ;
         setName(name);
         setDescription(description);
         setPrice(price);
         this.discount = null;
+        this.category = category;
     }
 
     public String getName() {
@@ -36,11 +37,11 @@ public class Product {
         this.description = description;
     }
 
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
@@ -55,15 +56,17 @@ public class Product {
     protected void addPurchase(Purchase purchase) {
         this.purchase = purchase;
     }
-    public void setDiscount(LocalDate to, LocalDate from, int percentage, ProductCategory category) {
-        Discount discount = new Discount(to, from, percentage, category);
+    public void setDiscount(LocalDate to, LocalDate from, float percentage) {
+        this.discount = new Discount(to, from, percentage);
     }
 
-    public int getDiscount(){
-        return this.discount == null ? 0 : this.discount.getPercentage();
+    public float getDiscount(){
+        if(discount==null){
+            return 0;}
+        return this.discount.getPercentage();
     }
 
-    public int getId(){
+    public int getId() {
         return this.id;
     }
 

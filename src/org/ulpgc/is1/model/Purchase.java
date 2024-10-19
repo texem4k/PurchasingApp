@@ -40,7 +40,7 @@ public class Purchase {
         return deliveryAddress;
     }
 
-    public int price() {
+    public float price() {
         return product.getPrice();
     }
 

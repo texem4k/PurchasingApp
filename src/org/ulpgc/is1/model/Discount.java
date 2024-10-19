@@ -4,9 +4,9 @@ import java.time.LocalDate;
 public class Discount {
     private LocalDate from;
     private LocalDate to;
-    private int percentage;
+    private float percentage;
 
-    public Discount(LocalDate from, LocalDate to, int percentage, ProductCategory category) {
+    public Discount(LocalDate from, LocalDate to, float percentage) {
         this.from = from;
         this.to = to;
         this.percentage = percentage;
@@ -24,7 +24,7 @@ public class Discount {
     public void setTo(LocalDate to) {
         this.to = to;
     }
-    public int getPercentage() {
+    public float getPercentage() {
         return percentage;
     }
     public void setPercentage(int percentage) {
