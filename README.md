@@ -10,5 +10,5 @@ de directorio.
 
 (Esto ya habiendo tenido todas las clases casi termiandas menos el Main y con al menos 4 commits realizados).
 
-Así pues, se nos ocurrió la idea de emepzar de cero, con otro proyecto. Entonces empezamos a ir añadiendo las clases poco a poco e ir haciendo commits
+Así pues, se nos ocurrió la idea de empezar de cero, con otro proyecto. Entonces empezamos a ir añadiendo las clases poco a poco e ir haciendo commits
 cada poco tiempo. Hasta ahora, que llegamos a terminarlo y todo salió bien
