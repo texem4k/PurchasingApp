@@ -1,6 +1,6 @@
-#PurchasingApp
+# PurchasingApp
 
-##Comentarios:
+## Comentarios:
 
 En nuestro primer intento de hacer el proyecto, nos empezó a fallar algo repentinamente, raro era por que rato atrás había funcionado lo que
 teníamos de Main, aun así estuvimos buscando el error durante un rato. Al final era algo relacionado con algún fichero, que se había cambiado
