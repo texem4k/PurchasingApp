@@ -36,6 +36,8 @@ public class Main {
 
         // Mostrar los datos de las compras del primer cliente
         System.out.println("Compras de " + firstCustomer.getName()+ " " + firstCustomer.getSurname() + " (" + firstCustomer.getEmail() + "):");
+        System.out.println("***********************************************************");
+        System.out.println();
         for (Purchase purchase : purchasingManager.getPurchaseList(firstCustomer)) {
             System.out.println("ID de compra: " + purchase.getId());
             System.out.println("Fecha de compra: " + purchase.getDate());
@@ -50,12 +52,3 @@ public class Main {
         }
     }
 }
-/*
-Discount discount = new Discount(LocalDate.now(), LocalDate.now().plusDays(30), 10);
-        product1.setDiscount(discount);
-
-
-if (purchase.getDate().isAfter(product1.discount.getFrom()) && purchase.getDate().isBefore(product1.discount.getTo())) {
-
-}
-        */

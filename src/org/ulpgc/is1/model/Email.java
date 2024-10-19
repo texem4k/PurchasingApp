@@ -8,7 +8,7 @@ public class Email {
     private String account;
 
     public Email(String account) {
-        this.account = account;
+        setAccount(account);
     }
 
     public String getEmail() {
@@ -16,7 +16,7 @@ public class Email {
     }
 
     public boolean isValid(String account){
-        Pattern pattern = Pattern.compile("@gmail.com|@hotmail.com|@ulpgc.es|@outlook.com", Pattern.CASE_INSENSITIVE);
+        Pattern pattern = Pattern.compile("^[\\w._%+-]+@(gmail\\.com|hotmail\\.com|ulpgc\\.es|outlook\\.com)$", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(account);
         return matcher.find();
     }
@@ -24,5 +24,12 @@ public class Email {
         if (isValid(account)) {
             this.account = account;
         }
+        else {
+            System.out.println("Email no válido");
+        }
+    }
+
+    public String getAccount() {
+        return account;
     }
 }

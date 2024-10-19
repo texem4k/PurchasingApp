@@ -35,8 +35,8 @@ public class Customer {
         this.surname = surname;
     }
 
-    public Email getEmail() {
-        return email;
+    public String getEmail() {
+        return email.getAccount();
     }
 
     public void setEmail(Email email) {
