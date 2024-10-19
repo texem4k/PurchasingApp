@@ -68,7 +68,6 @@ public class Customer {
                 return;
             }
         }
-
         deliveryAddress.add(address);
     }
 }
