@@ -1,4 +1,3 @@
-
 package org.ulpgc.is1.model;
 
 import java.time.LocalDate;
@@ -40,8 +39,12 @@ public class Purchase {
         return deliveryAddress;
     }
 
-    public float price() {
+    public int getPrice() {
         return product.getPrice();
+    }
+
+    public int getDiscountedPrice() {
+        return (int)(this.getPrice() * (1 - (product.getDiscount()/100)));
     }
 
     public void payPurchase(LocalDate date, int amount, String card) {

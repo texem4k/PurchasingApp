@@ -7,12 +7,12 @@ public class Product {
     private final int id;
     private String name;
     private String description;
-    private float price;
+    private int price;
     private ProductCategory category;
     public Discount discount;
     Purchase purchase;
 
-    public Product(String name, String description, float price, ProductCategory category) {
+    public Product(String name, String description, int price, ProductCategory category) {
         this.id =idCounter++ ;
         setName(name);
         setDescription(description);
@@ -37,11 +37,11 @@ public class Product {
         this.description = description;
     }
 
-    public float getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -56,7 +56,7 @@ public class Product {
     protected void addPurchase(Purchase purchase) {
         this.purchase = purchase;
     }
-    public void setDiscount(LocalDate to, LocalDate from, float percentage) {
+    public void setDiscount(LocalDate to, LocalDate from, int percentage) {
         this.discount = new Discount(to, from, percentage);
     }
 

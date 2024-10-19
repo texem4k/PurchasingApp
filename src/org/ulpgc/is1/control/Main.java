@@ -5,6 +5,7 @@ import org.ulpgc.is1.model.*;
 import java.time.LocalDate;
 
 public class Main {
+
     public static void main(String[] args) {
         // Crear el gestor de compras
         PurchasingManager purchasingManager = new PurchasingManager();
@@ -45,8 +46,8 @@ public class Main {
             System.out.println("Categoría: " + purchase.getProduct().getCategory());
             System.out.println("Descripción: " + purchase.getProduct().getDescription());
             System.out.println("Descuento: " + purchase.getProduct().getDiscount()+"%");
-            System.out.println("Precio: " + purchase.price()+"€");
-            System.out.println("Precio final: " + (purchase.price() - purchase.price() * (purchase.getProduct().getDiscount()/100))+"€");
+            System.out.println("Precio: " + purchase.getPrice() + "€");
+            System.out.println("Precio final: " + purchase.getDiscountedPrice() + "€");
             System.out.println("Dirección de entrega: " + purchase.getDeliveryAddress().getAddress() + " " + purchase.getDeliveryAddress().getNumber());
             System.out.println("------------------------------------------------");
         }

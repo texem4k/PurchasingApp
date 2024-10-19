@@ -27,7 +27,7 @@ public class PurchasingManager {
         return null;
     }
 
-    public void addProduct(String name, String description, float price, ProductCategory category) {
+    public void addProduct(String name, String description, int price, ProductCategory category) {
         products.add(new Product(name, description, price, category));
     }
 

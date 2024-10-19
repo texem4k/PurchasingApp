@@ -11,10 +11,6 @@ public class Email {
         setAccount(account);
     }
 
-    public String getEmail() {
-        return account;
-    }
-
     public boolean isValid(String account){
         Pattern pattern = Pattern.compile("^[\\w._%+-]+@(gmail\\.com|hotmail\\.com|ulpgc\\.es|outlook\\.com)$", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(account);
