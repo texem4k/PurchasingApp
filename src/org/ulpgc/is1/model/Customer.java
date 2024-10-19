@@ -36,7 +36,7 @@ public class Customer {
     }
 
     public String getEmail() {
-        return email.getAccount();
+        return email.getEmail();
     }
 
     public void setEmail(Email email) {

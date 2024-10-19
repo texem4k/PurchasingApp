@@ -8,7 +8,7 @@ public class Email {
     private String account;
 
     public Email(String account) {
-        setAccount(account);
+        setEmail(account);
     }
 
     public boolean isValid(String account){
@@ -16,7 +16,7 @@ public class Email {
         Matcher matcher = pattern.matcher(account);
         return matcher.find();
     }
-    public void setAccount(String account) {
+    public void setEmail(String account) {
         if (isValid(account)) {
             this.account = account;
         }
@@ -25,7 +25,4 @@ public class Email {
         }
     }
 
-    public String getAccount() {
-        return account;
-    }
 }
