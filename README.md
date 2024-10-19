@@ -1,5 +1,7 @@
 # PurchasingApp
 
+### Integrantes: Texenery Bordón Rodríguez | Harrinson Miliani Trujillo | Sergio Rodríguez Rubio
+
 ## Comentarios:
 
 En nuestro primer intento de hacer el proyecto, nos empezó a fallar algo repentinamente, raro era por que rato atrás había funcionado lo que
