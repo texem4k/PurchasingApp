@@ -61,6 +61,14 @@ public class Customer {
 
     protected void addAddress(String street, int number, int zip, String city) {
         Address address = new Address(street, number, zip, city);
+
+        for (Address address1 : getDeliveryAddress()) {
+            if(address1.equals(address)) {
+                System.out.println("El dirección ya registrada");
+                return;
+            }
+        }
+
         deliveryAddress.add(address);
     }
 }
