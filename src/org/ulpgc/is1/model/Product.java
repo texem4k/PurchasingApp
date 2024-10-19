@@ -9,8 +9,8 @@ public class Product {
     private String description;
     private int price;
     private ProductCategory category;
-    public Discount discount;
-    Purchase purchase;
+    private Discount discount;
+    private Purchase purchase;
 
     public Product(String name, String description, int price, ProductCategory category) {
         this.id =idCounter++ ;

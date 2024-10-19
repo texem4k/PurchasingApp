@@ -11,11 +11,12 @@ public class Email {
         setEmail(account);
     }
 
-    public boolean isValid(String account){
+    private boolean isValid(String account){
         Pattern pattern = Pattern.compile("^[\\w._%+-]+@(gmail\\.com|hotmail\\.com|ulpgc\\.es|outlook\\.com)$", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(account);
         return matcher.find();
     }
+
     public void setEmail(String account) {
         if (isValid(account)) {
             this.account = account;
@@ -23,6 +24,10 @@ public class Email {
         else {
             System.out.println("Email no válido");
         }
+    }
+
+    public String getEmail() {
+        return account;
     }
 
 }
