@@ -1,2 +1,1 @@
-# EL PROYECTO ESTÁ EN EL BRANCH MAIN
-
+# El proyecto está en el branch MASTER
