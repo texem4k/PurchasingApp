@@ -58,4 +58,9 @@ public class Customer {
     protected void addPurchase(Purchase purchase) {
         purchases.add(purchase);
     }
+
+    protected void addAddress(String street, int number, int zip, String city) {
+        Address address = new Address(street, number, zip, city);
+        deliveryAddress.add(address);
+    }
 }

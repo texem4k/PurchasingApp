@@ -3,6 +3,7 @@ package org.ulpgc.is1.model;
 import java.time.LocalDate;
 
 public class Product {
+    private static int idCounter=0;
     private final int id;
     private String name;
     private String description;
@@ -12,11 +13,10 @@ public class Product {
     Purchase purchase;
 
     public Product(String name, String description, int price, ProductCategory category) {
-        this.id = 0;
+        this.id =idCounter++ ;
         setName(name);
         setDescription(description);
         setPrice(price);
-        setCategory(this.category);
         this.discount = null;
     }
 
@@ -58,4 +58,13 @@ public class Product {
     public void setDiscount(LocalDate to, LocalDate from, int percentage, ProductCategory category) {
         Discount discount = new Discount(to, from, percentage, category);
     }
+
+    public int getDiscount(){
+        return this.discount == null ? 0 : this.discount.getPercentage();
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
 }
