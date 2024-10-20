@@ -13,22 +13,31 @@ public class Payment {
         this.amount = amount;
         this.card = card;
     }
+
     public LocalDate getDate() {
-        return date;
+        return this.date;
     }
     public void setDate(LocalDate date) {
         this.date = date;
     }
     public int getAmount() {
-        return amount;
+        return this.amount;
     }
     public void setAmount(int amount) {
         this.amount = amount;
     }
     public String getCard() {
-        return card;
+        return this.card;
     }
     public void setCard(String card) {
         this.card = card;
+    }
+
+    @Override
+    public String toString() {
+        String str = "\t\t\t|- Tarjeta de pago: " + this.card + "\n";
+        str += "\t\t\t|- Cantidad: " + this.amount + " euros\n";
+        str += "\t\t\t|- Fecha del pago: " + this.date.toString() + "\n";
+        return str;
     }
 }

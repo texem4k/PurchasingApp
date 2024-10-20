@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PurchasingManager {
-
     private List<Customer> customers;
     private List<Product> products;
 
@@ -17,7 +16,6 @@ public class PurchasingManager {
     public void addCustomer(String name, String surname, Email email) {
         customers.add(new Customer(name, surname, email));
     }
-
     public Customer getCustomer(String name, String surname) {
         for (Customer customer : customers) {
             if (customer.getName().equals(name) && customer.getSurname().equals(surname)) {
@@ -30,7 +28,6 @@ public class PurchasingManager {
     public void addProduct(String name, String description, int price, ProductCategory category) {
         products.add(new Product(name, description, price, category));
     }
-
     public Product getProduct(String name) {
         for (Product product : products) {
             if (product.getName().equals(name)) {

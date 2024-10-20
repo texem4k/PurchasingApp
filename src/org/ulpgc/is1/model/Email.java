@@ -8,7 +8,7 @@ public class Email {
     private String account;
 
     public Email(String account) {
-        setEmail(account);
+        this.setEmail(account);
     }
 
     private boolean isValid(String account){
@@ -25,9 +25,7 @@ public class Email {
             System.out.println("Email no válido");
         }
     }
-
     public String getEmail() {
-        return account;
+        return this.account;
     }
-
 }

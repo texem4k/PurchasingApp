@@ -12,53 +12,44 @@ public class Customer {
     private List<Purchase> purchases;
 
     public Customer(String name, String surname, Email email) {
-        setName(name);
-        setSurname(surname);
-        setEmail(email);
-        deliveryAddress = new ArrayList<Address>();
-        purchases = new ArrayList<Purchase>();
+        this.setName(name);
+        this.setSurname(surname);
+        this.setEmail(email);
+        this.deliveryAddress = new ArrayList<Address>();
+        this.purchases = new ArrayList<Purchase>();
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getSurname() {
-        return surname;
+        return this.surname;
     }
-
     public void setSurname(String surname) {
         this.surname = surname;
     }
-
     public String getEmail() {
-        return email.getEmail();
+        return this.email.getEmail();
     }
-
     public void setEmail(Email email) {
         this.email = email;
     }
-
     public List<Address> getDeliveryAddress() {
-        return deliveryAddress;
+        return this.deliveryAddress;
     }
-
     public void setDeliveryAddress(List<Address> deliveryAddress) {
         this.deliveryAddress = deliveryAddress;
     }
-
     protected List<Purchase> getPurchases() {
-        return purchases;
+        return this.purchases;
     }
 
     protected void addPurchase(Purchase purchase) {
-        purchases.add(purchase);
+        this.purchases.add(purchase);
     }
-
     protected void addAddress(String street, int number, int zip, String city) {
         Address address = new Address(street, number, zip, city);
 
@@ -68,6 +59,11 @@ public class Customer {
                 return;
             }
         }
-        deliveryAddress.add(address);
+        this.deliveryAddress.add(address);
+    }
+
+    @Override
+    public String toString() {
+        return this.name + " " + this.surname + " (email: " + this.email.getEmail() + ")";
     }
 }

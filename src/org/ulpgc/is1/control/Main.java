@@ -35,21 +35,17 @@ public class Main {
         purchasingManager.purchase(LocalDate.now(), firstCustomer, product1, deliveryAddress);
         purchasingManager.purchase(LocalDate.now(), firstCustomer, product2, deliveryAddress);
 
+        purchasingManager.getPurchaseList(firstCustomer).getFirst().payPurchase(LocalDate.now(), 18, "869425379");
+
         // Mostrar los datos de las compras del primer cliente
-        System.out.println("Compras de " + firstCustomer.getName()+ " " + firstCustomer.getSurname() + " (" + firstCustomer.getEmail() + "):");
+        System.out.println("El cliente 1 tiene " + purchasingManager.getPurchaseList(firstCustomer).size() + "reservas.");
+        System.out.println();
+        System.out.println("***********************************************************");
+        System.out.println("Compras de " + firstCustomer.toString());
         System.out.println("***********************************************************");
         System.out.println();
         for (Purchase purchase : purchasingManager.getPurchaseList(firstCustomer)) {
-            System.out.println("ID de compra: " + purchase.getId());
-            System.out.println("Fecha de compra: " + purchase.getDate());
-            System.out.println("Producto: " + purchase.getProduct().getName());
-            System.out.println("Categoría: " + purchase.getProduct().getCategory());
-            System.out.println("Descripción: " + purchase.getProduct().getDescription());
-            System.out.println("Descuento: " + purchase.getProduct().getDiscount()+"%");
-            System.out.println("Precio: " + purchase.getPrice() + "€");
-            System.out.println("Precio final: " + purchase.getDiscountedPrice() + "€");
-            System.out.println("Dirección de entrega: " + purchase.getDeliveryAddress().getAddress() + " " + purchase.getDeliveryAddress().getNumber());
-            System.out.println("------------------------------------------------");
+            System.out.println(purchase.toString());
         }
     }
 }

@@ -20,36 +20,49 @@ public class Purchase {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
-
     public LocalDate getDate() {
-        return date;
+        return this.date;
     }
-
     public Customer getCustomer() {
-        return customer;
+        return this.customer;
     }
-
     public Product getProduct() {
-        return product;
+        return this.product;
     }
-
     public Address getDeliveryAddress() {
-        return deliveryAddress;
+        return this.deliveryAddress;
     }
-
     public int getPrice() {
-        return product.getPrice();
+        return this.product.getPrice();
     }
-
     public int getDiscountedPrice() {
-        return (int)(this.getPrice() * (1 - (product.getDiscount()/100)));
+        return (int)(this.getPrice() * (1 - (this.product.getDiscount()/100)));
     }
 
     public void payPurchase(LocalDate date, int amount, String card) {
         if (this.payment == null) {
             this.payment = new Payment(date, amount, card);
         }
+    }
+
+    @Override
+    public String toString() {
+        String str = "\t\t  Compra (cod." + this.id + "):\n";
+        str += "----------------------------------------\n";
+        str += "\t*) Datos de la compra:\n";
+        str += "\t\t|- Fecha de la compra: " + this.date.toString() + "\n";
+        str += "\t\t|- Punto de entrega: " + this.deliveryAddress.toString() + "\n";
+        str += "\t\t|- Precio de la compra: " + this.getDiscountedPrice() + " euros.\n";
+        if (this.payment == null) {
+            str += "\t\t|- Pago: Compra no pagada\n";
+        } else {
+            str += "\t\t|- Pago: Compra pagada\n";
+            str += this.payment.toString();
+        }
+        str += this.product.toString();
+        str += "----------------------------------------\n";
+        return str;
     }
 }

@@ -14,28 +14,32 @@ public class Address {
     }
 
     public String getAddress() {
-        return address;
+        return this.address;
     }
     public void setAddress(String address) {
         this.address = address;
     }
-
     public int getNumber() {
-        return number;
+        return this.number;
     }
     public void setNumber(int number) {
         this.number = number;
     }
     public int getPostalCode() {
-        return postalCode;
+        return this.postalCode;
     }
     public void setPostalCode(int postalCode) {
         this.postalCode = postalCode;
     }
     public String getCity() {
-        return city;
+        return this.city;
     }
     public void setCity(String city) {
         this.city = city;
+    }
+
+    @Override
+    public String toString() {
+        return this.address + " número " + this.number + " en " + this.city + " (CP: " + this.postalCode + ")";
     }
 }

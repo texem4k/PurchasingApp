@@ -13,21 +13,29 @@ public class Discount {
     }
 
     public LocalDate getFrom() {
-        return from;
+        return this.from;
     }
     public void setFrom(LocalDate from) {
         this.from = from;
     }
     public LocalDate getTo() {
-        return to;
+        return this.to;
     }
     public void setTo(LocalDate to) {
         this.to = to;
     }
     public int getPercentage() {
-        return percentage;
+        return this.percentage;
     }
     public void setPercentage(int percentage) {
         this.percentage = percentage;
+    }
+
+    @Override
+    public String toString() {
+        String str = "\t\t\t|- Porcentaje: " + this.percentage + "%\n";
+        str += "\t\t\t|- Fecha de inicio: " + this.from + "\n";
+        str += "\t\t\t|- Fecha de finalización: " + this.to + "\n";
+        return str;
     }
 }
